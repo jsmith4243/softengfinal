@@ -198,12 +198,12 @@ public class UrlValidatorTest extends TestCase {
 							   testUrl = testUrl + fourthPart[fourthIndex].item;
 							   testUrl = testUrl + fifthPart[fifthIndex].item;
 							   
-							   System.out.println("testing: " + testUrl + "\n");
+							   System.out.println("testing: " + testUrl);
 							   
 							   if (firstPart[firstIndex].valid == true && secondPart[secondIndex].valid == true && thirdPart[thirdIndex].valid == true && fourthPart[fourthIndex].valid == true && fifthPart[fifthIndex].valid == true)
 							   {
 								   
-								   System.out.println("Expected: true, got: " + urlVal.isValid(testUrl));
+								   System.out.println("Expected: true, got: " + urlVal.isValid(testUrl) + "\n");
 								   
 								   //assertTrue(urlVal.isValid(testUrl));
 								   
@@ -212,7 +212,7 @@ public class UrlValidatorTest extends TestCase {
 							   else if (firstPart[firstIndex].valid == false || secondPart[secondIndex].valid == false || thirdPart[thirdIndex].valid == false || fourthPart[fourthIndex].valid == false || fifthPart[fifthIndex].valid == false)
 							   {
 								   
-								   System.out.println("Expected: false, got: " + urlVal.isValid(testUrl));
+								   System.out.println("Expected: false, got: " + urlVal.isValid(testUrl) + "\n");
 								   
 								   //assertFalse(urlVal.isValid(testUrl));
 								   
