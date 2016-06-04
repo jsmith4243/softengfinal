@@ -78,6 +78,17 @@ public class UrlValidatorTest extends TestCase {
 	   assertTrue(urlVal.isValid("http://www.amazon.org"));
 	   assertTrue(urlVal.isValid("ftp://www.amazon.org"));
 	   assertTrue(urlVal.isValid("h3t://www.amazon.org"));
+	   
+	   
+	   //assertTrue(urlVal.isValid("http://www.google.co.zw"));
+	   
+	   //assertTrue(urlVal.isValid("256.256.256.256"));
+	   //assertTrue(urlVal.isValid("255.255.255.255"));
+	   //assertTrue(urlVal.isValid("100.100.100.100"));
+	   //assertTrue(urlVal.isValid("1.1.1.1"));
+	   //assertTrue(urlVal.isValid("http://www.google.com:65636"));
+	   assertTrue(urlVal.isValid("http://www.google.com:80"));
+	   assertTrue(urlVal.isValid("http://www.google.com:0"));
 	  
 	   
 	   assertTrue(urlVal.isValid("http://www.google.com"));
@@ -128,6 +139,8 @@ public class UrlValidatorTest extends TestCase {
 	   assertFalse(urlVal.isValid("3ht://www.google.com"));
 	   assertFalse(urlVal.isValid("htp:/www.google.com")); 
 	   assertFalse(urlVal.isValid("http:/www.google.com"));
+	   assertFalse(urlVal.isValid("http:/www.google.com"));
+	   
 	   assertFalse(urlVal.isValid("://www.google.com"));
 	   //assertFalse(urlVal.isValid("http://256.256.256.256")); //BUG
 	   assertFalse(urlVal.isValid("://1.2.3.4.5"));
@@ -272,6 +285,12 @@ public class UrlValidatorTest extends TestCase {
 
 	ResultPair[] secondPart = {
 		new ResultPair("google.com", true),
+		new ResultPair("google.co.hk", true),
+		new ResultPair("google.co.zw", true),
+		new ResultPair("google.co.vn", true),
+		new ResultPair("google.co.tm", true),
+		new ResultPair("google.co.mw", true),
+		new ResultPair("google.co.fi", true),
         new ResultPair("amazon.com", true),
         new ResultPair("ebay.com", true),
         new ResultPair("", true)
@@ -280,7 +299,9 @@ public class UrlValidatorTest extends TestCase {
 	
 	ResultPair[] thirdPart = {
 		new ResultPair(":90", true),
+		new ResultPair(":74657", true),
 	    new ResultPair(":95", true),
+	    new ResultPair(":0", true),
 	    new ResultPair(":100", true),
 	    new ResultPair("", true)
 	};
